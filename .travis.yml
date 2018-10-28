@@ -18,7 +18,6 @@ install:
 # Plan
 script:
   - ls /opt
-  - ls /opt/terraform
   - mkdir /opt/terraform
   - cp test /opt/terraform/test
   # - ./terraform init
