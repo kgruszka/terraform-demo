@@ -12,7 +12,12 @@ notifications:
 git:
   depth: 1
 
-env: SOURCE_PATH=00_bootstrap
+matrix:
+  include:
+    - name: "00_bootstrap eu-central-1"
+      env: SOURCE_PATH=00_bootstrap
+    - name: "01_ec2 eu-central-1"
+      env: SOURCE_PATH=01_ec2
 
 # Install Terraform executable
 install:
