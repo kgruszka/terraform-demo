@@ -1,6 +1,11 @@
 language: minimal
 sudo: false
 
+branches:
+  only:
+  - master
+  - /feature\/.*/
+
 notifications:
   email: false
 
