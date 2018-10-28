@@ -2,7 +2,7 @@
 This folder contains bootstrap resources for running other examples in this repository
 
 ## Resources
-Terraform scripts in this folder creates an S3 bukcet for storing Terraform state and vpc with public and private subnets.
+Terraform scripts in this folder creates an S3 bukcet for storing Terraform state and vpc with public and private subnets together with all needed resources like Internet Gateway & route tables.
 
 All resources will be created in `eu-central-1` region.
 
