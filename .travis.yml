@@ -9,15 +9,17 @@ git:
 
 # Install Terraform executable
 install:
-  - wget https://releases.hashicorp.com/terraform/0.11.10/terraform_0.11.10_linux_amd64.zip
-  - unzip terraform_0.11.10_linux_amd64.zip /opt/terraform
-  - sudo ln -s /opt/terraform/terraform /usr/bin/terraform
-  - rm -f terraform.zip
+  - ls
+  # - wget https://releases.hashicorp.com/terraform/0.11.10/terraform_0.11.10_linux_amd64.zip
+  # - unzip terraform_0.11.10_linux_amd64.zip /opt/terraform
+  # - sudo ln -s /opt/terraform/terraform /usr/bin/terraform
+  # - rm -f terraform.zip
 
 # Plan
 script:
-  - ./terraform init
-  - ./terraform plan -out=terraform.tfplan
+  - pwd
+  # - ./terraform init
+  # - ./terraform plan -out=terraform.tfplan
 
 # Apply
 deploy:
