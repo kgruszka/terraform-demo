@@ -12,6 +12,8 @@ notifications:
 git:
   depth: 1
 
+env: SOURCE_PATH=00_bootstrap
+
 # Install Terraform executable
 install:
   - wget https://releases.hashicorp.com/terraform/0.11.10/terraform_0.11.10_linux_amd64.zip
@@ -21,6 +23,7 @@ install:
 
 # Plan
 script:
+  - cd ${SOURCE_PATH}
   - terraform init
   - terraform plan -out=terraform.tfplan
 
@@ -28,7 +31,7 @@ script:
 deploy:
 - provider: script
   script: 
-    - ./terraform apply terraform.tfplan
+    - terraform apply terraform.tfplan
   skip_cleanup: true
   on:
     branch: master
