@@ -10,6 +10,8 @@ To apply the scripts take those actions:
 2. Execute `./bootstrap.sh plan`
 3. Execute `./bootstrap.sh apply`
 
+NOTICE: `bootstrap.sh` removes `backend.tf` file each time it is being run with `plan` or `apply`.
+
 ### `./bootstrap.sh plan`
 This command will generate `bootstrap.tfplan` into this directory including terraform plan for creating S3 bucket.
 
