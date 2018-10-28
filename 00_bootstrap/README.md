@@ -2,7 +2,13 @@
 This folder contains bootstrap resources for running other examples in this repository
 
 ## Resources
-Terraform scripts in this folder creates only an S3 bukcet for storing Terraform state
+Terraform scripts in this folder creates an S3 bukcet for storing Terraform state and vpc with public and private subnets.
+
+## Setup
+
+You have to replace AWS account id in two files:
+- `backend_template/backend.tf` - `profile` value
+- `variables.tf` - `aws_account` variable default value
 
 ## bootstap.sh
 To apply the scripts take those actions:

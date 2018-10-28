@@ -1,4 +1,6 @@
-variable "aws_account" {}
+variable "aws_account" {
+  default = "606609185801"
+}
 
 variable "name" {
   default = "terraform-demo"
