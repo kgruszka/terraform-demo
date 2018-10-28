@@ -4,6 +4,8 @@ This folder contains bootstrap resources for running other examples in this repo
 ## Resources
 Terraform scripts in this folder creates an S3 bukcet for storing Terraform state and vpc with public and private subnets.
 
+All resources will be created in `eu-central-1` region.
+
 ## Setup
 
 You have to replace AWS account id in two files:
