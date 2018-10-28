@@ -1,0 +1,4 @@
+region  = "eu-central-1"
+bucket  = "terraform-demo-tfstate"
+key     = "demo/ecs-travis.tfstate"
+profile = "606609185801"

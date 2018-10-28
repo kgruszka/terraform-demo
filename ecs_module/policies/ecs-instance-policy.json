@@ -1,0 +1,28 @@
+{
+    "Version": "2012-10-17",
+    "Statement": [
+      {
+        "Effect": "Allow",
+        "Action": [
+          "ecs:CreateCluster",
+          "ecs:DeregisterContainerInstance",
+          "ecs:DiscoverPollEndpoint",
+          "ecs:Poll",
+          "ecs:RegisterContainerInstance",
+          "ecs:StartTelemetrySession",
+          "ecs:Submit*",
+          "ecs:StartTask",
+          "ecr:GetAuthorizationToken",
+          "ecr:GetDownloadUrlForLayer",
+          "ecr:BatchGetImage",
+          "ecr:BatchCheckLayerAvailability",
+          "s3:GetObject",
+          "logs:CreateLogStream",
+          "logs:PutLogEvents",
+          "ec2:DescribeTags",
+          "ec2:DescribeInstances"
+        ],
+        "Resource": "*"
+      }
+    ]
+  }

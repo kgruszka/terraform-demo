@@ -4,7 +4,7 @@ terraform {
   backend "s3" {
     region  = "eu-central-1"
     bucket  = "terraform-demo-tfstate"
-    key     = "demo/setup.tfstate"
+    key     = "demo/ec2.tfstate"
     profile = "606609185801"
   }
 }
