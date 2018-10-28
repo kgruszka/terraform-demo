@@ -16,8 +16,8 @@ install:
 
 # Plan
 script:
-  - ./terraform init
-  - ./terraform plan -out=terraform.tfplan
+  - terraform init
+  - terraform plan -out=terraform.tfplan
 
 # Apply
 deploy:
