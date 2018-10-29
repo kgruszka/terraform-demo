@@ -12,17 +12,16 @@ notifications:
 git:
   depth: 1
 
-matrix:
-  include:
-    - name: "00_bootstrap eu-central-1"
-      env: SOURCE_PATH=00_bootstrap
-    - name: "01_ec2 eu-central-1"
-      env: SOURCE_PATH=01_ec2
+env:
+  global:
+    - TERRAFORM_VERSION=0.11.10
+  matrix:
+    - SOURCE_PATH=01_ec2
 
 # Install Terraform executable
 install:
-  - wget https://releases.hashicorp.com/terraform/0.11.10/terraform_0.11.10_linux_amd64.zip
-  - unzip terraform_0.11.10_linux_amd64.zip -d /opt/terraform
+  - wget https://releases.hashicorp.com/terraform/${TERRAFORM_VERSION}/terraform_${TERRAFORM_VERSION}_linux_amd64.zip
+  - unzip terraform_${TERRAFORM_VERSION}_linux_amd64.zip -d /opt/terraform
   - sudo ln -s /opt/terraform/terraform /usr/bin/terraform
   - rm -f terraform.zip
 
