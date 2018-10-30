@@ -17,8 +17,7 @@ env:
     - TERRAFORM_VERSION=0.11.10
     - SOURCE_PATH=ecs_travis
   matrix:
-    - CONFIG_PATH=config/eu-central-1
-    - CONFIG_PATH=config/us-east-1
+    - CONFIG_REMOTE_PATH=config/eu-central-1/config.remote CONFIG_TFVARS_PATH=config/eu-central-1/config.tfvars
 
 # Install Terraform executable
 install:
@@ -30,14 +29,14 @@ install:
 # Plan
 script:
   - cd ${SOURCE_PATH}
-  - terraform init -backend-config=${CONFIG_PATH}/config.remote
-  - terraform plan -detailed-exitcode -var-file=${CONFIG_PATH}/config.tfvars -out=terraform.tfplan
+  - terraform init -backend-config=${CONFIG_REMOTE_PATH}
+  - terraform plan -detailed-exitcode -var-file=${CONFIG_TFVARS_PATH} -out=terraform.tfplan
 
 # Apply
 deploy:
 - provider: script
   script: 
-    - terraform apply -var-file=${CONFIG_PATH}/config.tfvars terraform.tfplan
+    - terraform apply -var-file=${CONFIG_TFVARS_PATH} terraform.tfplan
   skip_cleanup: true
   on:
     branch: master
