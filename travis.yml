@@ -16,7 +16,7 @@ env:
   global:
     - TERRAFORM_VERSION=0.11.10
   matrix:
-    - SOURCE_PATH=01_ec2
+    - SOURCE_PATH=ecs_travis
 
 # Install Terraform executable
 install:

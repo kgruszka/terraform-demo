@@ -1,0 +1,4 @@
+region         = "eu-central-1"
+bucket         = "terraform-demo-daznapi"
+key            = "tfstate/demo/dev/eu-central-1/ecs.tfstate"
+profile        = "606609185801"
