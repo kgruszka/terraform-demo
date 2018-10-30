@@ -31,7 +31,7 @@ install:
 script:
   - cd ${SOURCE_PATH}
   - terraform init -backend-config=${CONFIG_PATH}/config.remote
-  - terraform plan -var-file=${CONFIG_PATH}/config.tfvars -out=terraform.tfplan
+  - terraform plan -detailed-exitcode -var-file=${CONFIG_PATH}/config.tfvars -out=terraform.tfplan
 
 # Apply
 deploy:
