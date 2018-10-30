@@ -27,14 +27,14 @@ install:
 # Plan
 script:
   - cd ${SOURCE_PATH}
-  - terraform init -backend-config=config/eu-central-1/config.remote
-  - terraform plan -detailed-exitcode -var-file=config/eu-central-1/config.tfvars -out=terraform.tfplan
+  - terraform init -backend-config="config/eu-central-1/config.remote"
+  - terraform plan -var-file="config/eu-central-1/config.tfvars" -out=terraform.tfplan
 
 # Apply
 deploy:
 - provider: script
   script: 
-    - terraform apply -var-file=config/eu-central-1/config.tfvars terraform.tfplan
+    - terraform apply -var-file="config/eu-central-1/config.tfvars" terraform.tfplan
   skip_cleanup: true
   on:
     branch: master
