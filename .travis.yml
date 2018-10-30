@@ -15,7 +15,7 @@ git:
 env:
   global:
     - TERRAFORM_VERSION=0.11.10
-    - SOURCE_PATH=ecs_travis
+    - SOURCE_PATH=ecs
 
 # Install Terraform executable
 install:
@@ -27,14 +27,14 @@ install:
 # Plan
 script:
   - cd ${SOURCE_PATH}
-  - terraform init -backend-config="config/eu-central-1/config.remote"
-  - terraform plan -var-file="config/eu-central-1/config.tfvars" -out=terraform.tfplan
+  - terraform init
+  - terraform plan -out=terraform.tfplan
 
 # Apply
 deploy:
 - provider: script
   script: 
-    - terraform apply -var-file="config/eu-central-1/config.tfvars" terraform.tfplan
+    - terraform apply terraform.tfplan
   skip_cleanup: true
   on:
     branch: master
